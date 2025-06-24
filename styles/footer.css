@@ -1,0 +1,74 @@
+.footer {
+    background: linear-gradient(to right, #1a293a, #1a3a5f);
+    color: #e2e8f0;
+    padding: 30px 5% 25px;
+    margin-top: auto;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+body.dark-theme .footer {
+    background: linear-gradient(to right, #0d1b2a, #1a293a);
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer p {
+    color: #cbd5e0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 700px;
+}
+
+.privacy-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 8px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.privacy-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.copyright {
+    color: #a0aec0;
+    font-size: 0.85rem;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .footer p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .privacy-btn {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+}
