@@ -4,27 +4,155 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scientific Calculator - onlinecalculadorapro.com</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- º”‘ÿCSS -->
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/header.css">
-    <link rel="stylesheet" href="styles/calculator.css">
-    <link rel="stylesheet" href="styles/footer.css">
-    
-    <!-- º”‘ÿJS -->
-    <script src="scripts/theme.js" defer></script>
-    <script src="scripts/calculator.js" defer></script>
-    <script src="scripts/main.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Õ∑≤ø’ºŒª∑˚ -->
+    <!-- Header Section -->
     <div id="header-container"></div>
     
-    <!-- ÷˜ƒ⁄»›’ºŒª∑˚ -->
-    <div id="calculator-container"></div>
+    <!-- Main Content -->
+    <main class="content">
+        <div class="calc-container">
+            <div class="calc-header">
+                <h1><i class="fas fa-calculator"></i> Scientific Calculator</h1>
+                <p>Advanced features with a clean design</p>
+            </div>
+            
+            <div class="calc-mode-controls">
+                <div class="calc-angle-toggle">
+                    <span>Angle Unit:</span>
+                    <button id="calc-degBtn" class="calc-toggle-btn active">DEG</button>
+                    <button id="calc-radBtn" class="calc-toggle-btn">RAD</button>
+                    <button id="calc-gradBtn" class="calc-toggle-btn">GRAD</button>
+                </div>
+                <button id="calc-copyBtn" class="calc-copy-btn">
+                    <i class="fas fa-copy"></i> Copy Result
+                </button>
+            </div>
+            
+            <div class="calc-display-container">
+                <input type="text" id="calc-expression" readonly>
+                <input type="text" id="calc-display" value="0" readonly>
+            </div>
+            
+            <div class="calc-main-container">
+                <div class="calc-body">
+                    <div class="calc-scientific-panel">
+                        <button class="calc-btn function" data-value="sin(">sin</button>
+                        <button class="calc-btn function" data-value="cos(">cos</button>
+                        <button class="calc-btn function" data-value="tan(">tan</button>
+                        <button class="calc-btn function" data-value="asin(">sin‚Åª¬π</button>
+                        <button class="calc-btn function" data-value="acos(">cos‚Åª¬π</button>
+                        <button class="calc-btn function" data-value="atan(">tan‚Åª¬π</button>
+                        
+                        <button class="calc-btn function" data-value="sinh(">sinh</button>
+                        <button class="calc-btn function" data-value="cosh(">cosh</button>
+                        <button class="calc-btn function" data-value="tanh(">tanh</button>
+                        <button class="calc-btn function" data-value="asinh(">sinh‚Åª¬π</button>
+                        <button class="calc-btn function" data-value="acosh(">cosh‚Åª¬π</button>
+                        <button class="calc-btn function" data-value="atanh(">tanh‚Åª¬π</button>
+                        
+                        <button class="calc-btn function" data-value="log(">log‚ÇÅ‚ÇÄ</button>
+                        <button class="calc-btn function" data-value="ln(">ln</button>
+                        <button class="calc-btn function" data-value="exp(">eÀ£</button>
+                        <button class="calc-btn function" data-value="‚àö(">‚àö</button>
+                        <button class="calc-btn function" data-value="^">x ∏</button>
+                        <button class="calc-btn function" data-value="!">x!</button>
+                        
+                        <button class="calc-btn function" data-value="1/(">1/x</button>
+                        <button class="calc-btn function" data-value="œÄ">œÄ</button>
+                        <button class="calc-btn function" data-value="e">e</button>
+                        <button class="calc-btn function" data-value="(">(</button>
+                        <button class="calc-btn function" data-value=")">)</button>
+                        <button class="calc-btn clear" data-value="clear">AC</button>
+                        <button class="calc-btn backspace" data-value="backspace">
+                            <i class="fas fa-backspace"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="calc-calculation-panel">
+                        <div class="calc-operator-row">
+                            <button class="calc-btn operator" data-value="/">/</button>
+                            <button class="calc-btn operator" data-value="*">√ó</button>
+                            <button class="calc-btn operator" data-value="-">‚àí</button>
+                            <button class="calc-btn operator" data-value="+">+</button>
+                        </div>
+                        
+                        <div class="calc-number-panel">
+                            <button class="calc-btn" data-value="7">7</button>
+                            <button class="calc-btn" data-value="8">8</button>
+                            <button class="calc-btn" data-value="9">9</button>
+                            <button class="calc-btn operator" data-value="%">%</button>
+                            
+                            <button class="calc-btn" data-value="4">4</button>
+                            <button class="calc-btn" data-value="5">5</button>
+                            <button class="calc-btn" data-value="6">6</button>
+                            <button class="calc-btn function" data-value="abs(">|x|</button>
+                            
+                            <button class="calc-btn" data-value="1">1</button>
+                            <button class="calc-btn" data-value="2">2</button>
+                            <button class="calc-btn" data-value="3">3</button>
+                            <button class="calc-btn function" data-value="10^(">10À£</button>
+                            
+                            <button class="calc-btn zero" data-value="0">0</button>
+                            <button class="calc-btn" data-value=".">.</button>
+                            <button class="calc-btn special" data-value="¬±">
+                                <i class="fas fa-plus-minus"></i>
+                            </button>
+                            <button class="calc-btn equals" data-value="=">
+                                <i class="fas fa-equals"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="calc-history-panel">
+                    <h3>
+                        <i class="fas fa-history"></i> History
+                        <button id="calc-clearHistory"><i class="fas fa-trash"></i> Clear</button>
+                    </h3>
+                    <ul id="calc-historyList" class="calc-history-list"></ul>
+                </div>
+            </div>
+            
+            <div class="calc-footer">
+                <div>
+                    <p>Keyboard support: 
+                        <span class="calc-keyboard-hint">0-9</span>
+                        <span class="calc-keyboard-hint">+ - * /</span>
+                        <span class="calc-keyboard-hint">Enter =</span>
+                    </p>
+                </div>
+                <div>
+                    <p>Designed with <i class="fas fa-heart" style="color:#e74c3c"></i> | onlinecalculadorapro.com</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="calc-notification" class="calc-notification">
+            <i class="fas fa-check-circle"></i> Result copied to clipboard!
+        </div>
+    </main>
     
-    <!-- µ◊≤ø’ºŒª∑˚ -->
+    <!-- Footer Section -->
     <div id="footer-container"></div>
+
+    <script src="script.js"></script>
+    <script>
+        // Load header and footer
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-container').innerHTML = data;
+                });
+            
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-container').innerHTML = data;
+                });
+        });
+    </script>
 </body>
 </html>
